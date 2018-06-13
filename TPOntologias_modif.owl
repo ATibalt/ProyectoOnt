@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#"
+     xml:base="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#apruebaExamen -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#apruebaExamen">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#certificaA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#certificaA">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#comisionDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#comisionDe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#cursaEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#cursaEn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#formaParte -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#formaParte">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#parteneceA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#parteneceA">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#planificaA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#planificaA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#recibeCertificado -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#recibeCertificado">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Año -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Año">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CalificacionExamen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CalificacionExamen">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Costo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Costo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaExamen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaExamen">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaFin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaFin">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaInicio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaInicio">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#TipoExamen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#TipoExamen">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#cursaEn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#certificaA"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoAprobacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoAprobacion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoCursado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoCursado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#comisionDe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoAislado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoAislado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoEspecializado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoEspecializado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#parteneceA"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#planificaA"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
