@@ -1,438 +1,476 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#apruebaExamen -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#apruebaExamen">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#certificaA -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#certificaA">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#comisionDe -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#comisionDe">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#cursaEn -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#cursaEn">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#formaParte -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#formaParte">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#parteneceA -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#parteneceA">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#planificaA -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#planificaA">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#recibeCertificado -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#recibeCertificado">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Año -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Año">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CalificacionExamen -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CalificacionExamen">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Costo -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Costo">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaExamen -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaExamen">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaFin -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaFin">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaInicio -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#FechaInicio">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Fecha"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#TipoExamen -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#TipoExamen">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#cursaEn"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#certificaA"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoAprobacion -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoAprobacion">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoCursado -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CertificadoCursado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneAlumno"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneEvaluacion"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#comisionDe"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#entregaCertificado"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneComision"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoAislado -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoAislado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoEspecializado -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#CursoEspecializado">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tienePlanificacion"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#parteneceA"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#tieneCurso"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#planificaA"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Alumno"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Certificado"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Comision"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Curso"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Especializacion"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#Evaluacion"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#PlanificacionCurricular"/>
-        </owl:members>
-    </rdf:Description>
-</rdf:RDF>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere">
+    <Prefix name="" IRI="http://www.semanticweb.org/augus/ontologies/2018/5/OntologiaAnywhere#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <NamedIndividual IRI="#Curso1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#CalificacionExamen"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneCurso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CertificadoCursado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entregaCertificado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Certificado1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curso"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Fecha"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneComision"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneEvaluacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#FechaInicio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Costo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Comision1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alumno1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Año"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Certificado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alumno"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comision"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tienePlanificaion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoAislado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#FechaExamen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Evaluacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoEspecializado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#apruebaEvaluacion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Evaluacion1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneAlumno"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#FechaFin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanificacionCurricular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Especializacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obtieneCertificado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CertificadoAprobacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TipoExamen"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Comision"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#tieneAlumno"/>
+            <Class IRI="#Alumno"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Comision"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#tieneEvaluacion"/>
+            <Class IRI="#Evaluacion"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Curso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#entregaCertificado"/>
+            <Class IRI="#Certificado"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Curso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#tieneComision"/>
+            <Class IRI="#Comision"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Especializacion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#tienePlanificaion"/>
+            <Class IRI="#PlanificacionCurricular"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlanificacionCurricular"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#tieneCurso"/>
+            <Class IRI="#Curso"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#CertificadoAprobacion"/>
+        <Class IRI="#Certificado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificadoCursado"/>
+        <Class IRI="#Certificado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoAislado"/>
+        <Class IRI="#Curso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoEspecializado"/>
+        <Class IRI="#Curso"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Alumno"/>
+        <Class IRI="#Certificado"/>
+        <Class IRI="#Comision"/>
+        <Class IRI="#Curso"/>
+        <Class IRI="#Especializacion"/>
+        <Class IRI="#Evaluacion"/>
+        <Class IRI="#PlanificacionCurricular"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Alumno"/>
+        <NamedIndividual IRI="#Alumno1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Certificado"/>
+        <NamedIndividual IRI="#Certificado1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Comision"/>
+        <NamedIndividual IRI="#Comision1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Curso"/>
+        <NamedIndividual IRI="#Curso1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evaluacion"/>
+        <NamedIndividual IRI="#Evaluacion1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#apruebaEvaluacion"/>
+        <NamedIndividual IRI="#Alumno1"/>
+        <NamedIndividual IRI="#Evaluacion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneAlumno"/>
+        <NamedIndividual IRI="#Comision1"/>
+        <NamedIndividual IRI="#Alumno1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneEvaluacion"/>
+        <NamedIndividual IRI="#Comision1"/>
+        <NamedIndividual IRI="#Evaluacion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#entregaCertificado"/>
+        <NamedIndividual IRI="#Curso1"/>
+        <NamedIndividual IRI="#Certificado1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneComision"/>
+        <NamedIndividual IRI="#Curso1"/>
+        <NamedIndividual IRI="#Comision1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo"/>
+        <NamedIndividual IRI="#Curso1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#apruebaEvaluacion"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entregaCertificado"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#obtieneCertificado"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneAlumno"/>
+        <Class IRI="#Comision"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneComision"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneCurso"/>
+        <Class IRI="#PlanificacionCurricular"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneEvaluacion"/>
+        <Class IRI="#Comision"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tienePlanificaion"/>
+        <Class IRI="#Especializacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#apruebaEvaluacion"/>
+        <Class IRI="#Evaluacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entregaCertificado"/>
+        <Class IRI="#Certificado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#obtieneCertificado"/>
+        <Class IRI="#Certificado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneAlumno"/>
+        <Class IRI="#Alumno"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneComision"/>
+        <Class IRI="#Comision"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneCurso"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneEvaluacion"/>
+        <Class IRI="#Evaluacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tienePlanificaion"/>
+        <Class IRI="#PlanificacionCurricular"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Año"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#CalificacionExamen"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Costo"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Fecha"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#FechaExamen"/>
+        <DataProperty IRI="#Fecha"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#FechaFin"/>
+        <DataProperty IRI="#Fecha"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#FechaInicio"/>
+        <DataProperty IRI="#Fecha"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#TipoExamen"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Año"/>
+        <Class IRI="#Comision"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#CalificacionExamen"/>
+        <Class IRI="#Evaluacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Costo"/>
+        <Class IRI="#Curso"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FechaExamen"/>
+        <Class IRI="#Evaluacion"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FechaFin"/>
+        <Class IRI="#PlanificacionCurricular"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FechaFin"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#tieneCurso"/>
+            <Class IRI="#Curso"/>
+        </ObjectMinCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FechaInicio"/>
+        <Class IRI="#PlanificacionCurricular"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FechaInicio"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#tieneCurso"/>
+            <Class IRI="#Curso"/>
+        </ObjectMinCardinality>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TipoExamen"/>
+        <Class IRI="#Evaluacion"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Año"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#CalificacionExamen"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Costo"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Fecha"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#FechaExamen"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#FechaFin"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#FechaInicio"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#TipoExamen"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Alumnos</Literal>
+        </Annotation>
+        <Body>
+            <DataPropertyAtom>
+                <DataProperty IRI="#Costo"/>
+                <Variable IRI="#cu"/>
+                <Variable IRI="#costo"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#notEqual">
+                <Variable IRI="#costo"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">0</Literal>
+            </BuiltInAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#tieneComision"/>
+                <Variable IRI="#cu"/>
+                <Variable IRI="#co"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#tieneAlumno"/>
+                <Variable IRI="#co"/>
+                <Variable IRI="#al"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#entregaCertificado"/>
+                <Variable IRI="#cu"/>
+                <Variable IRI="#ce"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Alumno"/>
+                <Variable IRI="#al"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Certificado"/>
+                <Variable IRI="#ce"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Curso"/>
+                <Variable IRI="#cu"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Comision"/>
+                <Variable IRI="#co"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Evaluacion"/>
+                <Variable IRI="#ev"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apruebaEvaluacion"/>
+                <Variable IRI="#al"/>
+                <Variable IRI="#ev"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#obtieneCertificado"/>
+                <Variable IRI="#al"/>
+                <Variable IRI="#ce"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
 
 
 
