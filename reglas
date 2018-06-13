@@ -1,0 +1,31 @@
+
+/////////////////////   CERTIFICADO APROBADO   ////////////////////////////////////
+
+Costo(?cu, ?costo) ^ swrlb:notEqual(?costo, 0) ^ 
+
+tieneComision(?cu, ?co) ^ tieneAlumno(?co, ?al) ^ entregaCertificadoAprobado(?cu, ?ce) ^ 
+
+Alumno(?al) ^ CertificadoAprobacion(?ce) ^ Curso(?cu) ^ Comision(?co) ^ Evaluacion(?ev) ^ 
+
+TipoExamen(?ev, ?tipo) ^ swrlb:equal(?tipo, "Integrador") ^ 
+
+apruebaEvaluacion(?al, ?ev) ^ tieneEvaluacion(?co, ?ev) ^
+
+
+-> obtieneCertificado(?al, ?ce)
+
+
+/////////////////////   CERTIFICADO CURSADO   ////////////////////////////////////
+
+Costo(?cu, ?costo) ^ swrlb:equal(?costo, 0) ^ 
+
+tieneComision(?cu, ?co) ^ tieneAlumno(?co, ?al) ^ entregaCertificadoCursado(?cu, ?ce) ^ 
+
+Alumno(?al) ^ CertificadoCursado(?ce) ^ Curso(?cu) ^ Comision(?co) ^ Evaluacion(?ev) ^ 
+
+TipoExamen(?ev, ?tipo) ^ swrlb:equal(?tipo, "Parcial") ^ 
+
+apruebaEvaluacion(?al, ?ev) ^ tieneEvaluacion(?co, ?ev) ^
+
+
+-> obtieneCertificado(?al, ?ce)

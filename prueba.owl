@@ -19,12 +19,6 @@
         <DataProperty IRI="#CalificacionExamen"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#entregaCertificadoCursado"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#CertificadoAprobado1"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#tieneCurso"/>
     </Declaration>
     <Declaration>
@@ -37,7 +31,7 @@
         <NamedIndividual IRI="#Evaluacion2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CertificadoCursado1"/>
+        <NamedIndividual IRI="#Certificado1"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Curso"/>
@@ -67,34 +61,28 @@
         <DataProperty IRI="#Año"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Curso2"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Certificado"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Alumno"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Comision"/>
+        <ObjectProperty IRI="#tienePlanificaion"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#tienePlanificaion"/>
+        <Class IRI="#Comision"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CursoAislado"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Evaluacion"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#FechaExamen"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CursoEspecializado"/>
+        <Class IRI="#Evaluacion"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Evaluacion3"/>
+        <Class IRI="#CursoEspecializado"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#apruebaEvaluacion"/>
@@ -106,9 +94,6 @@
         <ObjectProperty IRI="#tieneAlumno"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#entregaCertificadoAprobado"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#FechaFin"/>
     </Declaration>
     <Declaration>
@@ -118,13 +103,10 @@
         <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#obtieneCertificado"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Comision2"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Especializacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obtieneCertificado"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CertificadoAprobacion"/>
@@ -132,11 +114,25 @@
     <Declaration>
         <DataProperty IRI="#TipoExamen"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Especializacion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#tienePlanificaion"/>
+            <Class IRI="#PlanificacionCurricular"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlanificacionCurricular"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#tieneCurso"/>
+            <Class IRI="#Curso"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Alumno"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#obtieneCertificado"/>
-            <Class IRI="#Certificado"/>
+            <ObjectProperty IRI="#apruebaEvaluacion"/>
+            <Class IRI="#Evaluacion"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -149,31 +145,17 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Comision"/>
-        <ObjectSomeValuesFrom>
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#tieneAlumno"/>
             <Class IRI="#Alumno"/>
-        </ObjectSomeValuesFrom>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Comision"/>
-        <ObjectSomeValuesFrom>
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#tieneEvaluacion"/>
             <Class IRI="#Evaluacion"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Comision"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#tieneAlumno"/>
-            <Class IRI="#Alumno"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Comision"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#tieneEvaluacion"/>
-            <Class IRI="#Evaluacion"/>
-        </ObjectAllValuesFrom>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Curso"/>
@@ -185,15 +167,8 @@
     <SubClassOf>
         <Class IRI="#Curso"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#entregaCertificadoAprobado"/>
-            <Class IRI="#CertificadoAprobacion"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Curso"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#entregaCertificadoCursado"/>
-            <Class IRI="#CertificadoCursado"/>
+            <ObjectProperty IRI="#tieneComision"/>
+            <Class IRI="#Comision"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -218,63 +193,21 @@
         <Class IRI="#CursoEspecializado"/>
         <Class IRI="#Curso"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Especializacion"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#tienePlanificaion"/>
-            <Class IRI="#PlanificacionCurricular"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PlanificacionCurricular"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#tieneCurso"/>
-            <Class IRI="#Curso"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PlanificacionCurricular"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#tieneCurso"/>
-            <Class IRI="#Curso"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <DisjointClasses>
+    <ClassAssertion>
         <Class IRI="#Alumno"/>
+        <NamedIndividual IRI="#Alumno1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Certificado"/>
-        <Class IRI="#Comision"/>
-        <Class IRI="#Curso"/>
-        <Class IRI="#Especializacion"/>
-        <Class IRI="#Evaluacion"/>
-        <Class IRI="#PlanificacionCurricular"/>
-    </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#Alumno"/>
-        <NamedIndividual IRI="#Alumno1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#CertificadoAprobacion"/>
-        <NamedIndividual IRI="#CertificadoAprobado1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#CertificadoCursado"/>
-        <NamedIndividual IRI="#CertificadoCursado1"/>
+        <NamedIndividual IRI="#Certificado1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Comision"/>
         <NamedIndividual IRI="#Comision1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Comision"/>
-        <NamedIndividual IRI="#Comision2"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Curso"/>
         <NamedIndividual IRI="#Curso1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Curso"/>
-        <NamedIndividual IRI="#Curso2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Evaluacion"/>
@@ -284,19 +217,10 @@
         <Class IRI="#Evaluacion"/>
         <NamedIndividual IRI="#Evaluacion2"/>
     </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Evaluacion"/>
-        <NamedIndividual IRI="#Evaluacion3"/>
-    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#apruebaEvaluacion"/>
         <NamedIndividual IRI="#Alumno1"/>
-        <NamedIndividual IRI="#Evaluacion1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#apruebaEvaluacion"/>
-        <NamedIndividual IRI="#Alumno1"/>
-        <NamedIndividual IRI="#Evaluacion3"/>
+        <NamedIndividual IRI="#Evaluacion2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneAlumno"/>
@@ -314,54 +238,24 @@
         <NamedIndividual IRI="#Evaluacion2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#tieneEvaluacion"/>
-        <NamedIndividual IRI="#Comision1"/>
-        <NamedIndividual IRI="#Evaluacion3"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#tieneAlumno"/>
-        <NamedIndividual IRI="#Comision2"/>
-        <NamedIndividual IRI="#Alumno1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#entregaCertificadoAprobado"/>
+        <ObjectProperty IRI="#entregaCertificado"/>
         <NamedIndividual IRI="#Curso1"/>
-        <NamedIndividual IRI="#CertificadoAprobado1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#entregaCertificadoCursado"/>
-        <NamedIndividual IRI="#Curso1"/>
-        <NamedIndividual IRI="#CertificadoCursado1"/>
+        <NamedIndividual IRI="#Certificado1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#tieneComision"/>
         <NamedIndividual IRI="#Curso1"/>
         <NamedIndividual IRI="#Comision1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#tieneComision"/>
-        <NamedIndividual IRI="#Curso2"/>
-        <NamedIndividual IRI="#Comision2"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Costo"/>
         <NamedIndividual IRI="#Curso1"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#TipoExamen"/>
         <NamedIndividual IRI="#Evaluacion1"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Parcial</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#TipoExamen"/>
-        <NamedIndividual IRI="#Evaluacion2"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Parcial</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#TipoExamen"/>
-        <NamedIndividual IRI="#Evaluacion3"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Integrador</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Parcial</Literal>
     </DataPropertyAssertion>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#apruebaEvaluacion"/>
@@ -369,14 +263,6 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#entregaCertificado"/>
-        <Class IRI="#Curso"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#entregaCertificadoAprobado"/>
-        <Class IRI="#Curso"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#entregaCertificadoCursado"/>
         <Class IRI="#Curso"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -410,14 +296,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#entregaCertificado"/>
         <Class IRI="#Certificado"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#entregaCertificadoAprobado"/>
-        <Class IRI="#CertificadoAprobacion"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#entregaCertificadoCursado"/>
-        <Class IRI="#CertificadoCursado"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obtieneCertificado"/>
@@ -556,159 +434,73 @@
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Los cursos pagos entregan un certificado de aprobado al alumno que aprueba el examen integrador</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Entrega Certificado Aprobado</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Alumnos</Literal>
         </Annotation>
         <Body>
             <DataPropertyAtom>
                 <DataProperty IRI="#Costo"/>
-                <Variable IRI="urn:swrl#cu"/>
-                <Variable IRI="urn:swrl#costo"/>
+                <Variable IRI="cu"/>
+                <Variable IRI="costo"/>
             </DataPropertyAtom>
             <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#notEqual">
-                <Variable IRI="urn:swrl#costo"/>
+                <Variable IRI="costo"/>
                 <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">0</Literal>
             </BuiltInAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#tieneComision"/>
-                <Variable IRI="urn:swrl#cu"/>
-                <Variable IRI="urn:swrl#co"/>
+                <Variable IRI="cu"/>
+                <Variable IRI="co"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#tieneAlumno"/>
-                <Variable IRI="urn:swrl#co"/>
-                <Variable IRI="urn:swrl#al"/>
+                <Variable IRI="co"/>
+                <Variable IRI="al"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#entregaCertificadoAprobado"/>
-                <Variable IRI="urn:swrl#cu"/>
-                <Variable IRI="urn:swrl#ce"/>
-            </ObjectPropertyAtom>
-            <ClassAtom>
-                <Class IRI="#Alumno"/>
-                <Variable IRI="urn:swrl#al"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#CertificadoAprobacion"/>
-                <Variable IRI="urn:swrl#ce"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Curso"/>
-                <Variable IRI="urn:swrl#cu"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Comision"/>
-                <Variable IRI="urn:swrl#co"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Evaluacion"/>
-                <Variable IRI="urn:swrl#ev"/>
-            </ClassAtom>
-            <DataPropertyAtom>
-                <DataProperty IRI="#TipoExamen"/>
-                <Variable IRI="urn:swrl#ev"/>
-                <Variable IRI="urn:swrl#tipo"/>
-            </DataPropertyAtom>
-            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#equal">
-                <Variable IRI="urn:swrl#tipo"/>
-                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Integrador</Literal>
-            </BuiltInAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#apruebaEvaluacion"/>
-                <Variable IRI="urn:swrl#al"/>
-                <Variable IRI="urn:swrl#ev"/>
+                <ObjectProperty IRI="#entregaCertificado"/>
+                <Variable IRI="cu"/>
+                <Variable IRI="ce"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#tieneEvaluacion"/>
-                <Variable IRI="urn:swrl#co"/>
-                <Variable IRI="urn:swrl#ev"/>
+                <Variable IRI="co"/>
+                <Variable IRI="ev"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Alumno"/>
+                <Variable IRI="al"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Certificado"/>
+                <Variable IRI="ce"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Curso"/>
+                <Variable IRI="cu"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Comision"/>
+                <Variable IRI="co"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Evaluacion"/>
+                <Variable IRI="ev"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apruebaEvaluacion"/>
+                <Variable IRI="al"/>
+                <Variable IRI="ev"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#obtieneCertificado"/>
-                <Variable IRI="urn:swrl#al"/>
-                <Variable IRI="urn:swrl#ce"/>
-            </ObjectPropertyAtom>
-        </Head>
-    </DLSafeRule>
-    <DLSafeRule>
-        <Annotation>
-            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
-            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Todos los cursos entregan un certificado de cursado al alumno que aprueba todos los parciales</Literal>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Entrega Certificado Cursado</Literal>
-        </Annotation>
-        <Body>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#tieneComision"/>
-                <Variable IRI="urn:swrl#cu"/>
-                <Variable IRI="urn:swrl#co"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#tieneAlumno"/>
-                <Variable IRI="urn:swrl#co"/>
-                <Variable IRI="urn:swrl#al"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#entregaCertificadoCursado"/>
-                <Variable IRI="urn:swrl#cu"/>
-                <Variable IRI="urn:swrl#ce"/>
-            </ObjectPropertyAtom>
-            <ClassAtom>
-                <Class IRI="#Alumno"/>
-                <Variable IRI="urn:swrl#al"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#CertificadoCursado"/>
-                <Variable IRI="urn:swrl#ce"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Curso"/>
-                <Variable IRI="urn:swrl#cu"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Comision"/>
-                <Variable IRI="urn:swrl#co"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Evaluacion"/>
-                <Variable IRI="urn:swrl#ev"/>
-            </ClassAtom>
-            <DataPropertyAtom>
-                <DataProperty IRI="#TipoExamen"/>
-                <Variable IRI="urn:swrl#ev"/>
-                <Variable IRI="urn:swrl#tipo"/>
-            </DataPropertyAtom>
-            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#equal">
-                <Variable IRI="urn:swrl#tipo"/>
-                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Parcial</Literal>
-            </BuiltInAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#apruebaEvaluacion"/>
-                <Variable IRI="urn:swrl#al"/>
-                <Variable IRI="urn:swrl#ev"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#tieneEvaluacion"/>
-                <Variable IRI="urn:swrl#co"/>
-                <Variable IRI="urn:swrl#ev"/>
-            </ObjectPropertyAtom>
-        </Body>
-        <Head>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#obtieneCertificado"/>
-                <Variable IRI="urn:swrl#al"/>
-                <Variable IRI="urn:swrl#ce"/>
+                <Variable IRI="al"/>
+                <Variable IRI="ce"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
